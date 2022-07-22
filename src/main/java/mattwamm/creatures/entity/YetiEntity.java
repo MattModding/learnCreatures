@@ -6,7 +6,6 @@ import mattwamm.creatures.entity.navigation.YetiNavigation;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MovementType;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.ai.pathing.EntityNavigation;
@@ -23,7 +22,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypeFilter;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
@@ -73,7 +71,7 @@ public class YetiEntity extends HostileEntity implements IAnimatable {
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         switch (getAnimationState()) {
-            case ATTACK -> {event.getController().setAnimation(animationState.ATTACK.animation);}
+            case ATTACK -> event.getController().setAnimation(animationState.ATTACK.animation);
             case SNIFF -> event.getController().setAnimation(animationState.SNIFF.animation);
             case ROAR -> event.getController().setAnimation(animationState.ROAR.animation);
             case RUN -> event.getController().setAnimation(animationState.RUN.animation);
