@@ -168,11 +168,6 @@ public class YetiEntity extends HostileEntity implements IAnimatable {
         this.setAnimationState(animationState.ATTACK);
     }
 
-    @Override
-    public boolean tryAttack(Entity target) {
-        return super.tryAttack(target);
-    }
-
     public void tryPickUp(Entity target) {
         if (!this.world.isClient) {
 
