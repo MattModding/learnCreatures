@@ -130,7 +130,7 @@ public class YetiEntity extends HostileEntity implements IAnimatable {
     @Override
     protected void initGoals() {
         this.goalSelector.add(0, new RevengeGoal(this));
-        this.goalSelector.add(1, new PickUpGoal(this, 1.2f, true));
+        //this.goalSelector.add(1, new PickUpGoal(this, 1.2f, true));
         this.goalSelector.add(1, new AnimatedAttackGoal(this, 1.2f, true));
         this.goalSelector.add(2, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
         this.goalSelector.add(2, new LookAtEntityGoal(this, ZombieEntity.class, 8.0f));

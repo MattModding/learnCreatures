@@ -18,10 +18,16 @@ public class AnimatedAttackGoal extends MeleeAttackGoal {
     }
 
     @Override
+    public void tick() {
+        super.tick();
+    }
+
+    @Override
     public void start() {
         if(this.mob instanceof YetiEntity) {
             ((YetiEntity) this.mob).setFrozen(true);
             ((YetiEntity) this.mob).setAnimationState(YetiEntity.animationState.ROAR);
+
         }
         super.start();
     }
